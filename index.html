@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel pannel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <nav class="navbar">
+      <!-- LOGO -->
+      <div class="logo">
+        <h1>Roadtrippers</h1>
+      </div>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item has-dropdown">
+          <a href="#">Membership</a>
+          <ul class="dropdown">
+            <li><a href="#">Member Deals</a></li>
+            <li><a href="#">Roadside Assistance</a></li>
+            <li><a href="#">Get Roadtrippers &#10230</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#">For RVers</a>
+          <ul class="dropdown">
+            <li><a href="#">Campground Search and Booking</a></li>
+            <li><a href="#">Overnight RV parking</a></li>
+            <li><a href="#">RV GPS</a></li>
+            <li><a href="#">Rving Resources</a></li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item has-dropdown">
+          <a href="#">Plan Ypur Trip</a>
+          <ul class="dropdown">
+            <li><a href="#">Trip Planner</a></li>
+            <li><a href="#">Trip Guides</a></li>
+            <li><a href="#">Forum</a></li>
+          </ul>
+        </li>
+
+        <li class="camp">
+          <a href="#">Campendium</a>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#">Magazine</a>
+          <ul class="dropdown">
+            <li><a href="#">The Ultimate Guide to Route 66</a></li>
+            <li><a href="#">Destination and Routes</a></li>
+            <li><a href="#">Road Culture</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Road Trips</a></li>
+            <li><a href="#">Great Outdoors</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- RIGHT ACTIONS -->
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-btn">
+          <i class="fa fa-moon-o"></i>
+        </button>
+        <h5 class="btn login">Login</h5>
+        <button class="btn signup">Sign up</button>
+      </div>
+       
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+      <div class="all-hero">
+        
+      </div>
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="top-logo">
+        <h2>Roadtrippers</h2>
+        <p>with Ai-powered autopilot</p>
+      </div>
+
+      <div class="hero-content">
+
+        <!-- LEFT -->
+
+        <div class="left">
+
+          <h1>
+            A road trip planner that plans your trip for you
+          </h1>
+
+          <p>
+            Roadtrippers Autopilot™ creates your itinerary based
+            on what we’ve learned from over 38 million trips.
+            You’re never more than a few clicks away from your
+            next great adventure.
+          </p>
+
+          <!-- OPTION -->
+
+          <div class="option-box">
+
+            <div class="option active">
+              <h4>Plan with Autopilot™</h4>
+              <p>Powered by AI and real road trips</p>
+            </div>
+
+            <div class="option">
+              <h4>Plan on your own</h4>
+              <p>Build your own itinerary step by step</p>
+            </div>
+
+          </div>
+
+          <!-- SEARCH -->
+
+          <div class="search-bar">
+
+            <div class="search-input">
+              <label>Starting Point</label>
+
+              <input
+                type="text"
+                id="startInput"
+                placeholder="Enter location"
+              >
+            </div>
+
+            <div class="search-input">
+              <label>Destination</label>
+
+              <input
+                type="text"
+                id="destinationInput"
+                placeholder="Enter destination"
+              >
+            </div>
+
+            <button class="search-btn" id="searchBtn">
+              →
+            </button>
+
+          </div>
+
+          <a href="#" class="map-link">
+            Not sure where to go? Explore the map →
+          </a>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="right">
+
+          <div class="image-stack">
+
+            <div class="rotating-circle"></div>
+
+            <img
+              class="stack stack1"
+              src="tavelimg/istockphoto-2166651330-612x612.webp"
+            >
+
+            <img
+              class="stack stack2"
+              src="tavelimg/road.jpg"
+            >
+
+            <img
+              class="stack stack3"
+              src="tavelimg/heroimg.webp"
+            >
+
+          </div>
+ 
+            </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= MAP SECTION ================= -->
+
+  <section class="map-section">
+
+    <div class="container">
+
+      <div class="starburst star-left">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="starburst star-right">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h2>
+        Plan, discover, and collaborate
+      </h2>
+
+      <div id="map"></div>
+
+    </div>
+
+  </section>
+
+
+    <!-- Featured -->
+  <section class="featured">
+
+  <p class="headline">Headlights on us</p>
+
+  <img src="tavelimg/Vector-5-300x41.webp" alt="New York Times">
+
+  <img src="tavelimg/Group-300x71.webp" alt="Travel and Leisure">
+
+  <img src="tavelimg/Group-2117212452-2-300x46.webp" alt="Wired">
+
+  <img src="tavelimg/Vector-6.png" alt="USA Today">
+
+</section>
+
+
+<!-- ================= ADVERTISEMENT ================= -->
+<div class="adsmember">
+
+  <section class="ad-section">
+
+    <p class="ad-label">
+        ADVERTISEMENT
+    </p>
+
+    <div class="ad-container">
+
+        <img
+            src="tavelimg/ads.jfif"
+            alt="Advertisement"
+        >
+
+    </div>
+
+</section>
+
+<!-- ================= MEMBERSHIP ================= -->
+
+<section class="membership">
+
+    <span class="membership-tag">
+        MEMBERSHIP
+    </span>
+
+    <h2>
+        Choose the right plan for you
+        <br>
+        and try it free for 7 days
+    </h2>
+
+    <p>
+        All plans include access to saved trips,
+        itinerary planning, maps and AI-powered
+        travel assistance.
+    </p>
+
+    <div class="pricing-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Feature</th>
+                    <th>FREE</th>
+                    <th>BASIC</th>
+                    <th>PRO</th>
+                    <th class="premium-head">PREMIUM</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Saved trips</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>15</td>
+                    <td>∞</td>
+                </tr>
+
+                <tr>
+                    <td>Stops per trip</td>
+                    <td>3</td>
+                    <td>20</td>
+                    <td>50</td>
+                    <td>150</td>
+                </tr>
+
+                <tr>
+                    <td>Custom planner</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+
+                <tr>
+                    <td>Trip export</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+
+                <tr>
+                    <td>Ad Free</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+
+                <tr>
+                    <td>Navigation</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+
+                <tr>
+                    <td>Offline Maps</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>✓</td>
+                </tr>
+
+                <tr>
+
+                    <td>Membership</td>
+
+                    <td>
+                        <strong>$0/yr</strong>
+                        <button>Signup</button>
+                    </td>
+
+                    <td>
+                        <strong>$35.99/yr</strong>
+                        <button>Try Basic</button>
+                    </td>
+
+                    <td>
+                        <strong>$49.99/yr</strong>
+                        <button>Try Pro</button>
+                    </td>
+
+                    <td>
+                        <strong>$99.99/yr</strong>
+                        <button>Try Premium</button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+</div>
+
+
+
+<!-- Extraordinary places -->
+
+
+
+<section class="places">
+
+
+  <div class="heading">
+
+        <span class="star">✦</span>
+
+        <div>
+            <h2>Places we find extraordinary</h2>
+            <p>
+                Look for the colorful icons on our map to locate our favorite places.
+            </p>
+        </div>
+
+        <span class="star">✦</span>
+
+    </div>
+
+    <div class="places-track">
+
+        <!-- CARD 1 -->
+        <div class="place-card">
+
+            <div class="place flower">
+                <img src="tavelimg/denali.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏔️</div>
+
+                <div class="text">
+                    <h3>Denali National Park and preserve</h3>
+                    <p>📍 Alaska</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="place-card">
+
+            <div class="place clover">
+                <img src="tavelimg/luray.webp" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏜️</div>
+
+                <div class="text">
+                    <h3>Luray Carves</h3>
+                    <p>📍 Lauray, virginia</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+        <!-- CARD 3 -->
+        <div class="place-card">
+
+            <div class="place flower">
+                <img src="tavelimg/yoda.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏔️</div>
+
+                <div class="text">
+                    <h3>Yoda Fountain</h3>
+                    <p>📍 San francisco, california</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+        <div class="place-card">
+
+            <div class="place clover">
+                <img src="tavelimg/boldt.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏜️</div>
+
+                <div class="text">
+                    <h3>Arches National Park</h3>
+                    <p>📍 Utah</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 5 -->
+        <div class="place-card">
+
+            <div class="place flower">
+                <img src="tavelimg/cabazon.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏔️</div>
+
+                <div class="text">
+                    <h3>Cabazon Dinosaurs</h3>
+                    <p>📍Cabazon California</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+         <!-- CARD 6 -->
+        <div class="place-card">
+
+            <div class="place flower">
+                <img src="tavelimg/arches.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🕳️</div>
+
+                <div class="text">
+                    <h3>Arches national park</h3>
+                    <p>📍 Moab, utah</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 7 -->
+        <div class="place-card">
+
+            <div class="place butterfly">
+                <img src="tavelimg/cadillac.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🚗</div>
+
+                <div class="text">
+                    <h3>Cadillac Ranch</h3>
+                    <p>📍 Amarilo Te</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- CARD 8 -->
+        <div class="place-card">
+
+            <div class="place clover">
+                <img src="tavelimg/fallingwater.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🏜️</div>
+
+                <div class="text">
+                    <h3>Fallingwater</h3>
+                    <p>📍 Mill Run, pennyslvania</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+         <!-- CARD 9 -->
+        <div class="place-card">
+
+            <div class="place flower">
+                <img src="tavelimg/assateague.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🕳️</div>
+
+                <div class="text">
+                    <h3>Assateague Island National Seashore</h3>
+                    <p>📍 Berlin, Maryland</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="place-card">
+
+            <div class="place butterfly">
+                <img src="tavelimg/catoosa.png" alt="">
+            </div>
+
+            <div class="info">
+
+                <div class="icon">🚗</div>
+
+                <div class="text">
+                    <h3>Blue whale of catoosa</h3>
+                    <p>📍Catoosa, Oklahoma</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    <button class="explore-btn">
+        Explore All Extraordinary Places →
+    </button>
+
+</section>
+
+
+<!-- Discoveries Section -->
+
+<section class="discoveries">
+
+    <div class="discoveries-header">
+
+        <h2>See what roadtrippers are finding</h2>
+
+        <div class="controls">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+
+    </div>
+
+    <div class="slider">
+
+        <div class="track" id="track">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>World's Largest Beaver, AB</h3>
+                <img src="tavelimg/beaver.png">
+
+                <div class="user">
+                    <img src="tavelimg/drandk.webp">
+                    <span>DaveRandy & Kathy</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Big Books, Apple, Ruler, Pencil,.....</h3>
+                <img src="tavelimg/big_books.png">
+
+                <div class="user">
+                    <img src="tavelimg/bray.webp">
+                    <span>James_Bray</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Dinosaur Statues, NM</h3>
+                <img src="tavelimg/dinosaurs.png">
+
+                <div class="user">
+                    <img src="tavelimg/roadtripper.webp">
+                    <span>roadtripper4011181</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <h3>Billy Tripps Mindfield,TN</h3>
+                <img src="tavelimg/mindfield.png">
+
+                <div class="user">
+                    <img src="tavelimg/delores.webp">
+                    <span>delorescook</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <h3>Big Josh:Cowboy Muffler man,...</h3>
+                <img src="tavelimg/muffler_man.png">
+
+                <div class="user">
+                    <img src="tavelimg/steph.webp">
+                    <span>steph</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <h3>Giant watering can and flower...</h3>
+                <img src="tavelimg/watering_can.png">
+
+                <div class="user">
+                    <img src="tavelimg/youngcove.webp">
+                    <span>Natecove</span>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <h3>The Thing?, AZ</h3>
+                <img src="tavelimg/thing.png">
+
+                <div class="user">
+                    <img src="tavelimg/dave.webp">
+                    <span>Dave Miller</span>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="card">
+                <h3>World's largest potato masher, WI</h3>
+                <img src="tavelimg/potato_masher.png">
+
+                <div class="user">
+                    <img src="tavelimg/roadtripper.webp">
+                    <span>roadtripper4011181</span>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="card">
+                <h3>The ozymandius Legs, TX</h3>
+                <img src="tavelimg/ozymandius.png">
+
+                <div class="user">
+                    <img src="tavelimg/dave.webp">
+                    <span>Dave Miller</span>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="card">
+                <h3>World's Largest pistachio, NM</h3>
+                <img src="tavelimg/pistachio.png">
+
+                <div class="user">
+                    <img src="tavelimg/kandd.webp">
+                    <span>Ken & Dava</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- stories -->
+
+
+<section class="stories">
+
+    <!-- TOP RIGHT SQUIGGLE -->
+    <div class="top-squiggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- BOTTOM LEFT CURVES -->
+    <div class="bottom-curves">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <h2 class="stories-title">
+        Some stories from the road
+    </h2>
+
+    <div class="stories-grid">
+
+        <!-- CARD 1 -->
+        <div class="story-card yellow">
+
+            <img src="tavelimg/beach.jpg" alt="">
+
+            <h3>
+                Is Buying an RV Worth It?
+                What to Know Before You Make the Move
+            </h3>
+
+            <div class="author">
+                <img src="tavelimg/benen-300x300.jpeg" alt="">
+                <span>Benen Shoquist</span>
+            </div>
+
+            <button>Read article</button>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="story-card green">
+
+            <img src="tavelimg/blur road.jpg" alt="">
+
+            <h3>
+                The Road Tripper's Guide to Windshield Wipers:
+                What to Know Before You Hit the Highway
+            </h3>
+
+            <div class="author">
+                <img src="tavelimg/benen-300x300.jpeg" alt="">
+                <span>Benen Shoquist</span>
+            </div>
+
+            <button>Read article</button>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="story-card navy">
+
+            <img src="tavelimg/town.jpg" alt="">
+
+            <h3>
+                250 Years in 2,500 Miles:
+                The Ultimate America250 Road Trip
+                From Boston to Selma
+            </h3>
+
+            <div class="author">
+                <img src="tavelimg/benen-300x300.jpeg" alt="">
+                <span>Benen Shoquist</span>
+            </div>
+
+            <button>Read article</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TOP LINKS SECTION -->
+<section class="routes-section">
+    <div class="routes-container">
+
+        <div class="route-tabs">
+            <a href="#" class="active">Famous Routes</a>
+            <a href="#">Interstate Exit Guides</a>
+            <a href="#">National Parks</a>
+        </div>
+
+        <div class="route-grid">
+            <a href="#">Route 66</a>
+            <a href="#">Beartooth Highway</a>
+            <a href="#">Blue Ridge Parkway</a>
+            <a href="#">Kancamagus Highway</a>
+
+            <a href="#">Pacific Coast Highway</a>
+            <a href="#">Skyline Drive</a>
+            <a href="#">Volcanic Legacy Scenic Byway</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div class="app-area">
+                <div class="balloon">🎈</div>
+
+                <div class="app-content">
+                    <h4>Keep exploring with the Roadtrippers mobile app.</h4>
+
+                    <p>
+                        Anything you plan or save automatically syncs with
+                        the app, ready for you when you hit the road.
+                    </p>
+
+                    <div class="store-buttons">
+                        <a href="#" class="store-btn">
+                            <i class="fab fa-apple"></i>
+                           <img src="tavelimg/apple.webp"> Download from App Store
+                        </a>
+
+                        <a href="#" class="store-btn">
+                            <i class="fab fa-google-play"></i>
+                           <img src="tavelimg/google.webp"> Download from Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-area">
+                <h4>Connect with us and hit up #roadtrippers <img src="tavelimg/parrot.webp"></h4>
+
+                <p>
+                    Tall tales, trip guides, and the weird and wonderful.
+                </p>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <div class="footer-column">
+                <h5>About</h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Roadtrippers Landing</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Business Tools</h5>
+                <ul>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Media Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Get Inspired</h5>
+                <ul>
+                    <li><a href="#">Road trip ideas by state</a></li>
+                    <li><a href="#">National parks</a></li>
+                    <li><a href="#">Famous routes</a></li>
+                    <li><a href="#">Voices from the Road</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column article-column">
+                <h5>The Latest</h5>
+
+                <a href="#">
+                    Is Buying an RV Worth It? What to Know Before You Make the Move
+                </a>
+
+                <a href="#">
+                    The Road Tripper's Guide to Windshield Wipers
+                </a>
+
+                <a href="#">
+                    250 Years in 2500 Miles: The Ultimate America250 Road Trip
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="logo">Roadtrippers</div>
+
+            <div class="bottom-links">
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS OF SERVICE</a>
+                <a href="#">COPYRIGHT</a>
+            </div>
+
+            <div class="copyright">
+                © Roadtrippers, LLC 2025
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

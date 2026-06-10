@@ -1,0 +1,273 @@
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item > a {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-item.active .dropdown {
+    display: block;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+}
+
+
+
+
+@media(max-width:1000px){
+
+      .hero-content{
+        flex-direction:column;
+      }
+
+      .left h1{
+        font-size:3.5rem;
+      }
+
+      .map-section h2{
+        font-size:2.8rem;
+      }
+
+      .image-stack{
+        width:100%;
+      }
+
+      .search-bar{
+        flex-direction:column;
+      }
+
+      .search-input{
+        border-right:none;
+        border-bottom:1px solid #ddd;
+      }
+
+      .search-btn{
+        width:100%;
+        height:80px;
+      }
+
+    }
+
+
+    /* Featured */
+
+    @media(max-width:900px){
+
+  .featured{
+    flex-wrap:wrap;
+    gap:25px;
+    padding:25px;
+  }
+
+  .featured img{
+    height:30px;
+  }
+
+}
+
+/* advertisment */
+
+@media(max-width:768px){
+
+    .membership h2{
+
+        font-size:1.8rem;
+    }
+
+    .ad-section{
+
+        width:95%;
+    }
+}
+
+/* Extraordinary places */
+
+@media(max-width:768px){
+
+    .place-card{
+        width:220px;
+    }
+
+    .place{
+        width:220px;
+        height:220px;
+    }
+
+    .text h3{
+        font-size:1.1rem;
+    }
+
+    .icon{
+        width:50px;
+        height:50px;
+        font-size:22px;
+    }
+}
+
+
+
+/* Discoveries Section */
+
+@media(max-width:768px){
+
+    .discoveries-header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .discoveries-header h2{
+        font-size:2rem;
+        text-align:center;
+    }
+
+    .card{
+        min-width:280px;
+    }
+
+    .card img{
+        height:200px;
+    }
+}
+
+
+
+
+/* ================= Stories section ================= */
+
+@media(max-width:992px){
+
+    .stories-grid{
+        grid-template-columns:1fr;
+        max-width:550px;
+    }
+
+    .stories-title{
+        font-size:2.7rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .stories{
+        padding:80px 20px;
+    }
+
+    .stories-title{
+        font-size:2rem;
+        margin-bottom:50px;
+    }
+
+    .story-card h3{
+        font-size:1.3rem;
+    }
+
+    .top-squiggle{
+        width:120px;
+        height:120px;
+        right:-20px;
+    }
+
+    .bottom-curves{
+        left:-30px;
+    }
+
+    .bottom-curves span{
+        width:120px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px){
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .footer-links{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .route-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px){
+
+    .route-tabs{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .route-grid{
+        grid-template-columns:1fr;
+    }
+
+    .app-area{
+        flex-direction:column;
+    }
+
+    .footer-links{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .bottom-links{
+        justify-content:center;
+    }
+}
