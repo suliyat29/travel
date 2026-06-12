@@ -167,12 +167,17 @@
         text-align:center;
     }
 
+    
     .card{
-        min-width:280px;
+        min-width:85vw;
     }
 
     .card img{
         height:200px;
+    }
+   .user img{
+        width:38px;
+        height:38px;
     }
 }
 
